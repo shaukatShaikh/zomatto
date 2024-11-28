@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Rating Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        h3 {
+            margin: 0;
+            color: #555;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        center {
+            margin-top: 10px;
+        }
+
+        .prediction {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Restaurant Rating Prediction</h1>
+
+    <form action="/text" method="post">
+        <table>
+            <tr>
+                <td><h3>Book Table Facility:</h3></td>
+                <td><input type="number" name="book_table" placeholder="Enter 1 for yes, 0 for no"></td>
+            </tr>
+            <tr>
+                <td><h3>Online Votes Taken:</h3></td>
+                <td><input type="number" name="votes" placeholder="Enter total votes"></td>
+            </tr>
+            <tr>
+                <td><h3>Average Cost for 2 Persons:</h3></td>
+                <td><input type="number" name="cost" placeholder="Enter average cost"></td>
+            </tr>
+            <tr>
+                <td><h3>Enter Location of Restaurant:</h3></td>
+                <td>
+                    <select name="location">
+                        <!-- Locations here -->
+                        <option value="South Bangalore">South Bangalore Layout</option>
+                        <option value="City Market">City Market Layout</option>
+                        <option value="South Bangalore">South Bangalore Layout</option>
+<option value="City Market">City Market Layout</option>
+<option value="Nagarbhavi">Nagarbhavi Layout</option>
+<option value="Bannerghatta Road">Bannerghatta Road Layout</option>
+<option value="BTM">BTM Layout</option>
+<option value="Kanakapura Road">Kanakapura Road Layout</option>
+<option value="Bommanahalli">Bommanahalli Layout</option>
+<option value="CV Raman Nagar">CV Raman Nagar Layout</option>
+<option value="Electronic City">Electronic City Layout</option>
+<option value="HSR">HSR Layout</option>
+<option value="Marathahalli">Marathahalli Layout</option>
+<option value="Wilson Garden">Wilson Garden Layout</option>
+<option value="Shanti Nagar">Shanti Nagar Layout</option>
+<option value="Koramangala">Koramangala Layout</option>
+<option value="Koramangala 8th Block">Koramangala 8th Block Layout</option>
+<option value="Richmond Road">Richmond Road Layout</option>
+<option value="Jalahalli">Jalahalli Layout</option>
+                <option value="Bellandur">Bellandur Layout</option>
+                <option value="Sarjapur Road">Sarjapur Road Layout</option>
+                <option value="Whitefield">Whitefield Layout</option>
+                <option value="East Bangalore">East Bangalore Layout</option>
+                <option value="Old Airport Road">Old Airport Road Layout</option>
+                <option value="Indiranagar">Indiranagar Layout</option>
+                <option value="Frazer Town">Frazer Town Layout</option>
+                <option value="RT Nagar">RT Nagar Layout</option>
+                <option value="MG Road">MG Road Layout</option>
+                <option value="Brigade Road">Brigade Road Layout</option>
+                <option value="Lavelle Road">Lavelle Road Layout</option>
+                <option value="Church Street">Church Street Layout</option>
+                <option value="Ulsoor">Ulsoor Layout</option>
+                <option value="Residency Road">Residency Road Layout</option>
+                <option value="Shivajinagar">Shivajinagar Layout</option>
+                <option value="Infantry Road">Infantry Road Layout</option>
+                <option value="St. Marks Road">St. Marks Road Layout</option>
+                <option value="Cunningham Road">Cunningham Road Layout</option>
+                <option value="Race Course Road">Race Course Road Layout</option>
+                <option value="Commercial Street">Commercial Street Layout</option>
+                <option value="Vasanth Nagar">Vasanth Nagar Layout</option>
+                <option value="HBR Layout">HBR Layout</option>
+                <option value="Domlur">Domlur Layout</option>
+                <option value="Ejipura">Ejipura Layout</option>
+                <option value="Jeevan Bhima Nagar">Jeevan Bhima Nagar Layout</option>
+                <option value="Old Madras Road">Old Madras Road Layout</option>
+                <option value="Malleshwaram">Malleshwaram Layout</option>
+                <option value="Seshadripuram">Seshadripuram Layout</option>
+                <option value="Kammanahalli">Kammanahalli Layout</option>
+                <option value="Majestic">Majestic Layout</option>
+                <option value="Langford Town">Langford Town Layout</option>
+                <option value="Central Bangalore">Central Bangalore Layout</option>
+                <option value="Sanjay Nagar">Sanjay Nagar Layout</option>
+                <option value="Brookefield">Brookefield Layout</option>
+                <option value="ITPL Main Road, Whitefield">ITPL Main Road, Whitefield Layout</option>
+                <option value="Varthur Main Road, Whitefield">Varthur Main Road, Whitefield Layout</option>
+                <option value="KR Puram">KR Puram Layout</option>
+                <option value="Koramangala 2nd Block">Koramangala 2nd Block Layout</option>
+                <option value="Hosur Road">Hosur Road Layout</option>
+                <option value="Rajajinagar">Rajajinagar Layout</option>
+                <option value="Banaswadi">Banaswadi Layout</option>
+                <option value="North Bangalore">North Bangalore Layout</option>
+                <option value="Nagawara">Nagawara Layout</option>
+                <option value="Hennur">Hennur Layout</option>
+                <option value="Kalyan Nagar">Kalyan Nagar Layout</option>
+                <option value="New BEL Road">New BEL Road Layout</option>
+                <option value="Jakkur">Jakkur Layout</option>
+                <option value="Rammurthy Nagar">Rammurthy Nagar Layout</option>
+                <option value="Thippasandra">Thippasandra Layout</option>
+                <option value="Kaggadasapura">Kaggadasapura Layout</option>
+                <option value="Hebbal">Hebbal Layout</option>
+                <option value="Kengeri">Kengeri Layout</option>
+                <option value="Sankey Road">Sankey Road Layout</option>
+                <option value="Sadashiv Nagar">Sadashiv Nagar Layout</option>
+                <option value="Basaveshwara Nagar">Basaveshwara Nagar Layout</option>
+                <option value="Yeshwantpur">Yeshwantpur Layout</option>
+                <option value="West Bangalore">West Bangalore Layout</option>
+                <option value="Magadi Road">Magadi Road Layout</option>
+                <option value="Yelahanka">Yelahanka Layout</option>
+                <option value="Sahakara Nagar">Sahakara Nagar Layout</option>
+                <option value="Peenya">Peenya Layout</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Enter Type of Restaurant:</h3></td>
+                <td>
+                    <select name="type_">
+                        <option value="Buffet">Buffet Layout</option>
+                        <option value="Cafes">Cafes Layout</option>
+                        <option value="Delivery">Delivery Layout</option>
+                        <option value="Desserts">Desserts Layout</option>
+                        <option value="Dine-out">Dine-out Layout</option>
+                        <option value="Drinks & nightlife">Drinks & Nightlife Layout</option>
+                        <option value="Pubs and bars">Pubs and Bars Layout</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <center>
+            <button type="submit">Predict</button>
+        </center>
+    </form>
+
+    <center>
+        <div class="prediction">{{prediction_text}}</div>
+    </center>
+</body>
+</html>
